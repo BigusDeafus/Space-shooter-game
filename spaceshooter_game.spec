@@ -5,7 +5,7 @@ a = Analysis(
     ['spaceshooter_game.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('assets', 'assets')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

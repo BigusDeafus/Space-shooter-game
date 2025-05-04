@@ -2,20 +2,24 @@ import pygame
 import random
 import sys
 import random
+import os
 
 pygame.init()
 WIDTH, HEIGHT = 800, 1000
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Shooter")
 
-PLAYER_SHIP = pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\main_ship-2.png").convert_alpha()
-ENEMY_SHIP = pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\darkgrey_02.png").convert_alpha()
-TANK_ENEMY_SHIP = pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\enemy_2_2.png").convert_alpha()
-BULLET_IMG = pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\projectile_1.png").convert_alpha()
-BG = pygame.transform.scale(pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\background.png").convert(), (WIDTH, HEIGHT))
-BOSS_IMAGE = pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\large_enemy.png").convert_alpha()
-EXPLOSION_IMAGE = pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\explosion-3.png").convert_alpha()
-POWERUP_IMAGE = pygame.image.load(r"c:\Users\AMD\Desktop\mokslai\Universitetas\2 semestras\Kursinis_darbas\Space shooter game\Pixel SHMUP Free\icon-powerup.png").convert_alpha()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ASSETS_DIR = os.path.join(BASE_DIR, "assets")
+
+PLAYER_SHIP = pygame.image.load(os.path.join(ASSETS_DIR, "main_ship-2.png")).convert_alpha()
+ENEMY_SHIP = pygame.image.load(os.path.join(ASSETS_DIR, "darkgrey_02.png")).convert_alpha()
+TANK_ENEMY_SHIP = pygame.image.load(os.path.join(ASSETS_DIR, "enemy_2_2.png")).convert_alpha()
+BULLET_IMG = pygame.image.load(os.path.join(ASSETS_DIR, "projectile_1.png")).convert_alpha()
+BG = pygame.transform.scale(pygame.image.load(os.path.join(ASSETS_DIR, "background.png")).convert(), (WIDTH, HEIGHT))
+BOSS_IMAGE = pygame.image.load(os.path.join(ASSETS_DIR, "large_enemy.png")).convert_alpha()
+EXPLOSION_IMAGE = pygame.image.load(os.path.join(ASSETS_DIR, "explosion-3.png")).convert_alpha()
+POWERUP_IMAGE = pygame.image.load(os.path.join(ASSETS_DIR, "icon-powerup.png")).convert_alpha()
 
 font = pygame.font.SysFont("comicsans", 30)
 big_font = pygame.font.SysFont("comicsans", 60)
